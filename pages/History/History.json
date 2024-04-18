@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "翻译历史",
+  "navigationBarTextStyle":"white",
+  "enablePullDownRefresh": false
+}

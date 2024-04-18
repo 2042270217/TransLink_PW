@@ -1,10 +1,43 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/TransLink/TransLink",
+    "pages/History/History",
+    "pages/Setting/Setting"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
-    "navigationStyle": "custom"
+    "navigationBarBackgroundColor": "#5fc991",
+    "navigationBarTextStyle":"white",
+    "backgroundColor": "#E9EDE8",
+    "backgroundTextStyle":"light",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "backgroundColor": "#EBF2F5",
+    "borderStyle":"white",
+    "color": "#C2C2C2",
+    "selectedColor": "#5fc991",
+    "list": [
+      {
+        "text": "翻译",
+        "pagePath": "pages/TransLink/TransLink",
+        "iconPath": "asset/pic/translate.png",
+        "selectedIconPath": "asset/pic/translate_active.png"
+      }
+      ,
+      {
+        "text": "翻译历史",
+        "pagePath": "pages/History/History",
+        "iconPath": "asset/pic/history.png",
+        "selectedIconPath": "asset/pic/history_active.png"
+      }
+      ,
+      {
+        "text": "设置",
+        "pagePath": "pages/Setting/Setting",
+        "iconPath": "asset/pic/setting.png",
+        "selectedIconPath": "asset/pic/setting_active.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",

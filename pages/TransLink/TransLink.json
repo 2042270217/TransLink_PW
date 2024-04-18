@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "TransLink PW",
+  "navigationBarTextStyle":"white",
+  "enablePullDownRefresh": false
+}
