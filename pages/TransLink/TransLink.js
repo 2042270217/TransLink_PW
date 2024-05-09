@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    currentText: '',
+    outputText: '',
+    languageArr: ['中文', '英文'],
+    currentLanguage: 0,
+    targetLanguage: 1
   },
 
   /**
@@ -62,5 +66,45 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  playCurrentVoice() {
+    console.log("playCurrentVoice~" + this.data.currentText)
+  },
+  confirmText(event) {
+    this.setData({
+      currentText: event.detail.value
+    })
+  },
+  translate() {
+    console.log("translate~" + this.data.currentText)
+    this.setData({
+      outputText: this.data.currentText
+    })
+    
+  },
+
+  setCurrentLanguage(event) {
+    this.setData({
+      currentLanguage: event.detail.value
+    })
+  },
+  setTargetLanguage(event) {
+    this.setData({
+      targetLanguage: event.detail.value
+    })
+  },
+  changeLanguage() {
+    const temp = this.data.currentLanguage
+    this.setData({
+      currentLanguage: this.data.targetLanguage
+    })
+    this.setData({
+      targetLanguage: temp
+    })
+  },
+
+  playOutputVoice(){
+    console.log("playOutputVoice~"+this.data.outputText);
   }
 })

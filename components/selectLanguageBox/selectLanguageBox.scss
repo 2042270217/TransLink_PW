@@ -1,0 +1,22 @@
+.selectBody{
+  display: flex;
+  height: 80rpx;
+  background-color:#e4e4e4;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  border-radius: 20rpx;
+  flex-direction: row;
+  align-items:center;
+  justify-content:space-around;
+}
+.languageText{
+  flex: 1;
+  font-size: 40rpx;
+}
+
+.button{
+  width: 100rpx;
+  height: 50rpx;
+}

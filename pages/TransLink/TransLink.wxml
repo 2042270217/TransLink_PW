@@ -1,2 +1,47 @@
-<!--pages/TransLink/TransLink.wxml-->
-<text>pages/TransLink/TransLink.wxml</text>
+<!-- inputBox -->
+<view class="mainTexBody">
+<image class="mainTex" src="../../asset/pic/translate_active.png" mode="scaleToFill"/>
+</view>
+
+<view class="inputBoxBody">
+  <view class="inputBoxTextBody">
+    <textarea class="inputText" auto-focus confirm-type="done" placeholder="请输入文本" bindinput="confirmText" />
+  </view>
+
+  <view class="inputBoxButton">
+    <view class="leftButton">
+      <image class="button" src="../../asset/pic/bf.png" mode="scaleToFill" bind:tap="playCurrentVoice" />
+    </view>
+
+    <view class="rightButton">
+      <image class="buttonBig" src="../../asset/pic/fy.png" mode="scaleToFill" bind:tap="translate" />
+    </view>
+  </view>
+</view>
+
+<!-- selectLanguage -->
+<view class="selectBody">
+  <picker range="{{languageArr}}" value="{{currentLanguage}}" bindchange="setCurrentLanguage">
+    <text class="languageText">{{languageArr[currentLanguage]}}</text>
+  </picker>
+
+  <image class="selectButton" src="../../asset/pic/qh.png" mode="scaleToFill" bind:tap="changeLanguage"></image>
+
+  <picker range="{{languageArr}}" value="{{targetLanguage}}" bindchange="setTargetLanguage">
+    <text class="languageText">{{languageArr[targetLanguage]}}</text>
+  </picker>
+</view>
+
+<!-- outputBox -->
+<view class="outputBoxBody">
+  <view class="outputBoxTextBody">
+    <textarea class="outputText"  value="{{outputText}}" auto-focus confirm-type="done" 	placeholder="翻译结果" disabled="true" />
+  </view>
+  
+  <view class="inputBoxButton">
+    <view class="leftButton">
+      <image class="button" src="../../asset/pic/bf.png" mode="scaleToFill" bind:tap="playOutputVoice" />
+    </view>
+  </view>
+</view>
+

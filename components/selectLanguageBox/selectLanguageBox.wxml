@@ -1,0 +1,11 @@
+<view class="selectBody">
+  <picker range="{{languageArr}}" value="{{currentLanguage}}" bindchange="setCurrentLanguage">
+    <text class="languageText">{{languageArr[currentLanguage]}}</text>
+  </picker>
+
+  <image class="button" src="../../asset/pic/qh.png" mode="scaleToFill" bind:tap="changeLanguage"></image>
+
+  <picker range="{{languageArr}}" value="{{targetLanguage}}" bindchange="setTargetLanguage">
+    <text class="languageText">{{languageArr[targetLanguage]}}</text>
+  </picker>
+</view>

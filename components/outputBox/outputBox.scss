@@ -1,0 +1,49 @@
+.outputBoxBody{
+  display: flex;
+  height: 400rpx;
+  background-color:#e4e4e4;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  border-radius: 30rpx;
+  flex-direction: column;
+}
+.outputBoxTextBody{
+  flex:5;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  flex-direction:row;
+}
+.outputBoxButton{
+  flex:1;
+  display: flex;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+
+}
+.leftButton{
+  display: flex;
+  flex: 3;
+}
+
+.rightButton{
+  display: flex;
+  flex: 1;
+}
+
+.button{
+  width: 50rpx;
+  height: 50rpx;
+}
+.buttonBig{
+  width: 70rpx;
+  height: 70rpx;
+}
+.outputText{
+  font-size: 35rpx;
+}
