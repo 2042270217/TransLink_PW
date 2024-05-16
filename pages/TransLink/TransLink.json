@@ -1,8 +1,6 @@
 {
   "usingComponents": {
-    "inputBox":"../../components/inputBox/inputBox",
-    "selectLanguageBox":"../../components/selectLanguageBox/selectLanguageBox",
-    "outputBox":"../../components/outputBox/outputBox"
+
   
   },
   "navigationBarTitleText": "TransLink PW",

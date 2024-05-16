@@ -1,0 +1,67 @@
+.singleHistory_normal {
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #e4e4e4;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+  margin-top: 5rpx;
+  border-radius: 15rpx;
+}
+.singleHistory_big {
+  height: 300rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #e4e4e4;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+  margin-top: 5rpx;
+  border-radius: 30rpx;
+}
+
+.top{
+  flex:1;
+  background-color: #e4e4e4;
+  border-radius:15rpx;
+}
+
+.mainBody{
+  display: flex;
+  flex:3;
+  margin-top: 10rpx;
+  background-color: #f3f3f3;
+  flex-direction: column;
+}
+
+.singleCurrentHistory {
+  flex: 3;
+}
+
+.singleOutputHistory {
+  flex: 2;
+  color: rgb(139, 139, 139);
+}
+
+.textBody{
+  display: flex;
+  flex:4;
+  flex-direction: column;
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+}
+
+.buttonBody{
+  flex:1;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+  margin-bottom: 5rpx;
+  display: flex;
+  gap: 50rpx;
+}
+.button{
+  width: 40rpx;
+  height: 40rpx;
+  
+}

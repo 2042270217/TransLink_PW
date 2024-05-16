@@ -1,23 +1,24 @@
-.mainTexBody{
+.mainTexBody {
   height: 200rpx;
   display: flex;
   flex-direction: row;
-  align-items:flex-end;
-  justify-content:space-around;
-  background-color: rgb(158, 214, 186,0.3);
+  align-items: flex-end;
+  justify-content: space-around;
+  background-color: rgb(158, 214, 186, 0.3);
   margin-right: 20rpx;
   margin-left: 20rpx;
   border-radius: 20rpx;
 }
-.mainTex{
+
+.mainTex {
   height: 200rpx;
   width: 200rpx;
 }
 
-.inputBoxBody{
+.inputBoxBody {
   display: flex;
   height: 400rpx;
-  background-color:#e4e4e4;
+  background-color: #e4e4e4;
   margin-left: 20rpx;
   margin-right: 20rpx;
   margin-top: 10rpx;
@@ -25,16 +26,18 @@
   border-radius: 30rpx;
   flex-direction: column;
 }
-.inputBoxTextBody{
-  flex:5;
+
+.inputBoxTextBody {
+  flex: 5;
   margin-left: 20rpx;
   margin-right: 20rpx;
   margin-top: 10rpx;
   margin-bottom: 10rpx;
-  flex-direction:row;
+  flex-direction: row;
 }
-.inputBoxButton{
-  flex:1;
+
+.inputBoxButton {
+  flex: 1;
   display: flex;
   margin-left: 20rpx;
   margin-right: 20rpx;
@@ -42,55 +45,59 @@
   margin-bottom: 10rpx;
 
 }
-.leftButton{
+
+.leftButton {
   display: flex;
   flex: 3;
 }
 
-.rightButton{
+.rightButton {
   display: flex;
   flex: 1;
 }
 
-.button{
+.button {
   width: 50rpx;
   height: 50rpx;
 }
-.buttonBig{
+
+.buttonBig {
   width: 70rpx;
   height: 70rpx;
 }
-.inputText{
+
+.inputText {
   font-size: 35rpx;
 }
 
-.selectBody{
+.selectBody {
   display: flex;
   height: 80rpx;
-  background-color:#e4e4e4;
+  background-color: #e4e4e4;
   margin-left: 20rpx;
   margin-right: 20rpx;
   margin-top: 10rpx;
   margin-bottom: 10rpx;
   border-radius: 20rpx;
   flex-direction: row;
-  align-items:center;
-  justify-content:space-around;
+  align-items: center;
+  justify-content: space-around;
 }
-.languageText{
+
+.languageText {
   flex: 1;
   font-size: 40rpx;
 }
 
-.selectButton{
+.selectButton {
   width: 100rpx;
   height: 50rpx;
 }
 
-.outputBoxBody{
+.outputBoxBody {
   display: flex;
   height: 400rpx;
-  background-color:#e4e4e4;
+  background-color: #e4e4e4;
   margin-left: 20rpx;
   margin-right: 20rpx;
   margin-top: 10rpx;
@@ -98,16 +105,18 @@
   border-radius: 30rpx;
   flex-direction: column;
 }
-.outputBoxTextBody{
-  flex:5;
+
+.outputBoxTextBody {
+  flex: 5;
   margin-left: 20rpx;
   margin-right: 20rpx;
   margin-top: 10rpx;
   margin-bottom: 10rpx;
-  flex-direction:row;
+  flex-direction: row;
 }
-.outputBoxButton{
-  flex:1;
+
+.outputBoxButton {
+  flex: 1;
   display: flex;
   margin-left: 20rpx;
   margin-right: 20rpx;
@@ -115,24 +124,28 @@
   margin-bottom: 10rpx;
 
 }
-.leftButton{
+
+.leftButton {
   display: flex;
   flex: 3;
+  gap: 20rpx;
 }
 
-.rightButton{
+.rightButton {
   display: flex;
   flex: 1;
 }
 
-.button{
+.button {
   width: 50rpx;
   height: 50rpx;
 }
-.buttonBig{
+
+.buttonBig {
   width: 70rpx;
   height: 70rpx;
 }
-.outputText{
+
+.outputText {
   font-size: 35rpx;
 }

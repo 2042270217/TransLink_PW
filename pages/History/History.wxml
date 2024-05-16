@@ -1,2 +1,24 @@
-<!--pages/History/History.wxml-->
-<text>pages/History/History.wxml</text>
+<view class="topButton">
+  <view class="leftButton">
+    <block wx:if="{{multiSelectState}}">
+      <image class="singleTopButton" src="../../asset/pic/qx.png" mode="scaleToFill" bind:tap="selectAll" />
+    </block>
+  </view>
+  <view class="rightButton">
+    <image class="singleTopButton" src="../../asset/pic/dx.png" mode="scaleToFill" bind:tap="multiSelect" />
+  </view>
+
+</view>
+<block wx:if="{{multiSelectState}}">
+  <checkbox-group bindchange="checkGroup">
+    <view class="singleLine" wx:for="{{transHistory}}" wx:key="id">
+      <checkbox class="checkBox" value="{{item.id}}" checked="true" />
+      <singleHistory class="his" currentText="{{item.currentText}}" outputText="{{item.outputText}} "></singleHistory>
+    </view>
+  </checkbox-group>
+</block>
+<block wx:else>
+  <view wx:for="{{transHistory}}" wx:key="id">
+    <singleHistory currentText="{{item.currentText}}" outputText="{{item.outputText}} " bind:del="checkDel"></singleHistory>
+  </view>
+</block>

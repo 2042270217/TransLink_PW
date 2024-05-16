@@ -1,0 +1,26 @@
+<block wx:if="{{shouldUnfold}}">
+  <view class="singleHistory_big">
+    <view class="top" bind:tap="unfold">
+    </view>
+    <view class="mainBody">
+      <view class="textBody">
+        <text class="singleCurrentHistory">{{currentText}} </text>
+        <text class="singleOutputHistory">{{outputText}} </text>
+      </view>
+      <view class="buttonBody">
+        <image class="button" src="../../asset/pic/bf.png" mode="scaleToFill" bind:tap="playCurrentVoice" />
+        <image class="button" src="../../asset/pic/sc.png" mode="scaleToFill" bind:tap="checkDel" />
+      </view>
+
+    </view>
+
+  </view>
+</block>
+<block wx:else>
+  <view class="singleHistory_normal" bind:tap="unfold">
+    <view class="textBody">
+      <text class="singleCurrentHistory">{{currentText}} </text>
+      <text class="singleOutputHistory">{{outputText}} </text>
+    </view>
+  </view>
+</block>

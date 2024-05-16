@@ -1,0 +1,34 @@
+.topButton{
+  height: 100rpx;
+  display: flex;
+  margin-right: 20rpx;
+  margin-left: 10rpx;
+  align-items:flex-end;
+  justify-content:space-between;
+}
+.leftButton{
+  display: flex;
+  align-items:flex-end;
+  justify-content: flex-start;
+}
+.rightButton{
+  display: flex;
+  align-items:flex-end;
+  justify-content: flex-end;
+}
+.singleTopButton{
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.singleLine{
+  margin-left: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.checkBox{
+  flex: 1;
+}
+.his{
+  flex: 15;
+}

@@ -3,5 +3,18 @@
   "projectname": "TransLink_PW",
   "setting": {
     "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/History/History",
+          "pathName": "pages/History/History",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
   }
 }

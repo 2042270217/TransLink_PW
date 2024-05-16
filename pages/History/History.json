@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "singleHistory":"../../components/singleHistory/singleHistory"
+  },
   "navigationBarTitleText": "翻译历史",
   "navigationBarTextStyle":"white",
   "enablePullDownRefresh": false

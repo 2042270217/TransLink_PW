@@ -1,7 +1,4 @@
 <!-- inputBox -->
-<view class="mainTexBody">
-<image class="mainTex" src="../../asset/pic/translate_active.png" mode="scaleToFill"/>
-</view>
 
 <view class="inputBoxBody">
   <view class="inputBoxTextBody">
@@ -11,6 +8,8 @@
   <view class="inputBoxButton">
     <view class="leftButton">
       <image class="button" src="../../asset/pic/bf.png" mode="scaleToFill" bind:tap="playCurrentVoice" />
+      <image class="button" src="../../asset/pic/mkf.png" mode="scaleToFill" bind:tap="playOutputVoice" />
+
     </view>
 
     <view class="rightButton">
@@ -43,5 +42,9 @@
       <image class="button" src="../../asset/pic/bf.png" mode="scaleToFill" bind:tap="playOutputVoice" />
     </view>
   </view>
+</view>
+
+<view class="mainTexBody">
+<image class="mainTex" src="../../asset/pic/translate_active.png" mode="scaleToFill"/>
 </view>
 

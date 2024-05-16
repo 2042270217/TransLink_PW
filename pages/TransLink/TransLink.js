@@ -88,6 +88,7 @@ Page({
     this.setData({
       currentLanguage: event.detail.value
     })
+    console.log(this.data.languageArr[this.data.currentLanguage])
   },
   setTargetLanguage(event) {
     this.setData({
