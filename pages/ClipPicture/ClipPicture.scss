@@ -1,0 +1,30 @@
+.mainBody{
+  display: flex;
+  background-color: aqua;
+}
+.buttonBody{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 100rpx;
+  z-index: 10;
+  height: 100rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  width:710rpx;
+  align-items: center;
+  justify-content:space-around;
+}
+.button{
+  height: 100rpx;
+  z-index: 10;
+}
+.textBody{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text{
+  z-index: 10;
+  color:white;
+}

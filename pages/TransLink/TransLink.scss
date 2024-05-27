@@ -149,3 +149,15 @@
 .outputText {
   font-size: 35rpx;
 }
+
+.buttons{
+  display: flex;
+  height: 200rpx;
+  flex-direction: row;
+  align-items:center;
+  justify-content: space-around;
+}
+.buttonItem{
+  height: 120rpx;
+  width: 120rpx;
+}

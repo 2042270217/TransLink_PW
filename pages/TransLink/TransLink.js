@@ -1,4 +1,12 @@
 // pages/TransLink/TransLink.js
+
+const app = getApp();
+//引入插件：微信同声传译
+const plugin = requirePlugin('WechatSI');
+//获取全局唯一的语音识别管理器recordRecoManager
+const manager = plugin.getRecordRecognitionManager();
+
+
 Page({
 
   /**
@@ -9,14 +17,31 @@ Page({
     outputText: '',
     languageArr: ['中文', '英文'],
     currentLanguage: 0,
-    targetLanguage: 1
+    targetLanguage: 1,
+    recordState: false
   },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.initRecorder();
+  },
 
+  initRecorder() {
+    const that = this;
+    // 正常开始录音识别时会调用此事件
+    manager.onStart = function (res) {
+      console.log("成功开始录音识别")
+    }
+    //识别结束事件
+    manager.onStop = function (res) {
+      console.log("结束录音", res.result)
+    }
+    manager.onRecognize = function (res) {
+      console.log(res.result)
+    }
   },
 
   /**
@@ -30,7 +55,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
   },
 
   /**
@@ -81,7 +105,7 @@ Page({
     this.setData({
       outputText: this.data.currentText
     })
-    
+
   },
 
   setCurrentLanguage(event) {
@@ -105,7 +129,34 @@ Page({
     })
   },
 
-  playOutputVoice(){
-    console.log("playOutputVoice~"+this.data.outputText);
+  playOutputVoice() {
+    console.log("playOutputVoice~" + this.data.outputText);
+  },
+
+  acceptVoice() {
+    if (this.data.recordState) {
+      manager.start()
+      this.setData({
+        recordState: false
+      })
+    } else {
+      manager.stop();
+      this.setData({
+        recordState: true
+      })
+    }
+  },
+  takePhoto(){
+    console.log("take a photo")
+    wx.chooseMedia({
+      count:1,
+      mediaType:['image'],
+      success(res){
+        const photo=res.tempFiles[0].tempFilePath
+        wx.navigateTo({
+          url: `/pages/ClipPicture/ClipPicture?photoPath=${photo}`
+        })
+      }
+    })
   }
 })

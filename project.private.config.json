@@ -8,6 +8,20 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/ClipPicture/ClipPicture",
+          "pathName": "pages/ClipPicture/ClipPicture",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/TransLink/TransLink",
+          "pathName": "pages/TransLink/TransLink",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/History/History",
           "pathName": "pages/History/History",
           "query": "",

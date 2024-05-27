@@ -8,7 +8,6 @@
   <view class="inputBoxButton">
     <view class="leftButton">
       <image class="button" src="../../asset/pic/bf.png" mode="scaleToFill" bind:tap="playCurrentVoice" />
-      <image class="button" src="../../asset/pic/mkf.png" mode="scaleToFill" bind:tap="playOutputVoice" />
 
     </view>
 
@@ -44,7 +43,14 @@
   </view>
 </view>
 
-<view class="mainTexBody">
-<image class="mainTex" src="../../asset/pic/translate_active.png" mode="scaleToFill"/>
+<view class="buttons">
+<block wx:if="{{recordState}}">
+  <image class="buttonItem" src="../../asset/pic/mkf.png" mode="scaleToFill" bind:tap="acceptVoice" />
+</block>
+<block wx:else>
+  <image class="buttonItem" src="../../asset/pic/bf.png" mode="scaleToFill" bind:tap="acceptVoice" />
+  <image class="buttonItem" src="../../asset/pic/xj.png" mode="scaleToFill" bind:tap="takePhoto" />
+</block>
+
 </view>
 
