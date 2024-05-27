@@ -21,6 +21,13 @@
 }
 .textBody{
   display: flex;
+  position: absolute;
+  top: 50rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  z-index: 10;
+  height: 100rpx;
+  width:710rpx;
   justify-content: center;
   align-items: center;
 }

@@ -18,7 +18,8 @@ Page({
     languageArr: ['中文', '英文'],
     currentLanguage: 0,
     targetLanguage: 1,
-    recordState: false
+    recordState: false,
+    imgURL:''
   },
 
 
@@ -38,6 +39,8 @@ Page({
     //识别结束事件
     manager.onStop = function (res) {
       console.log("结束录音", res.result)
+      const re=res.result
+      that.setData({currentText:re})
     }
     manager.onRecognize = function (res) {
       console.log(res.result)
@@ -55,6 +58,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
+    var app=getApp()
+    this.setData({imgURL:app.globalData.reservePhotoURL})
   },
 
   /**
@@ -134,15 +139,15 @@ Page({
   },
 
   acceptVoice() {
-    if (this.data.recordState) {
+    if (!this.data.recordState) {
       manager.start()
       this.setData({
-        recordState: false
+        recordState: true
       })
     } else {
       manager.stop();
       this.setData({
-        recordState: true
+        recordState: false
       })
     }
   },
@@ -157,6 +162,16 @@ Page({
           url: `/pages/ClipPicture/ClipPicture?photoPath=${photo}`
         })
       }
+    })
+  },
+  setClipboardCur(){
+    wx.setClipboardData({
+      data: this.data.currentText
+    })
+  },
+  setClipboardOut(){
+    wx.setClipboardData({
+      data: this.data.outputText
     })
   }
 })

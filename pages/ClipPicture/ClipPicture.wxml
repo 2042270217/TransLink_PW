@@ -1,7 +1,7 @@
 <view class="textBody"><text class="text">点击裁剪框预览</text></view>
 <view>
-  <image-cropper id="image-cropper" limit_move="{{true}}" disable_rotate="{{true}}" width="{{width}}" height="{{height}}" imgSrc="{{src}}" bindload="cropperload" bindimageload="loadimage" bindtapcut="clickcut"></image-cropper>
+  <image-cropper id="image-cropper" limit_move="{{true}}" disable_rotate="{{true}}" width="{{width}}" height="{{height}}" imgSrc="{{src}}" min_width="{{1}}" min_height="{{1}}"  bindload="cropperload" bindimageload="loadimage" bindtapcut="clickcut"></image-cropper>
 </view>
 <view class="buttonBody">
-  <button class="button">裁剪</button>
+  <button class="button" bind:tap="reservePhoto">裁剪</button>
 </view>

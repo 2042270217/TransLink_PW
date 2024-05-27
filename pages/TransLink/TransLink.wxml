@@ -2,13 +2,13 @@
 
 <view class="inputBoxBody">
   <view class="inputBoxTextBody">
-    <textarea class="inputText" auto-focus confirm-type="done" placeholder="请输入文本" bindinput="confirmText" />
+    <textarea class="inputText" auto-focus confirm-type="done" placeholder="请输入文本" value="{{currentText}}" bindinput="confirmText" />
   </view>
 
   <view class="inputBoxButton">
     <view class="leftButton">
       <image class="button" src="../../asset/pic/bf.png" mode="scaleToFill" bind:tap="playCurrentVoice" />
-
+      <image class="button" src="../../asset/pic/fz.png" mode="scaleToFill" bind:tap="setClipboardCur" />
     </view>
 
     <view class="rightButton">
@@ -39,6 +39,7 @@
   <view class="inputBoxButton">
     <view class="leftButton">
       <image class="button" src="../../asset/pic/bf.png" mode="scaleToFill" bind:tap="playOutputVoice" />
+      <image class="button" src="../../asset/pic/fz.png" mode="scaleToFill" bind:tap="setClipboardOut" />
     </view>
   </view>
 </view>
