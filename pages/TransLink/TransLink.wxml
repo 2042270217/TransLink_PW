@@ -33,9 +33,9 @@
 <!-- outputBox -->
 <view class="outputBoxBody">
   <view class="outputBoxTextBody">
-    <textarea class="outputText"  value="{{outputText}}" auto-focus confirm-type="done" 	placeholder="翻译结果" disabled="true" />
+    <textarea class="outputText" value="{{outputText}}" auto-focus confirm-type="done" placeholder="翻译结果" disabled="true" />
   </view>
-  
+
   <view class="inputBoxButton">
     <view class="leftButton">
       <image class="button" src="../../asset/pic/bf.png" mode="scaleToFill" bind:tap="playOutputVoice" />
@@ -44,13 +44,11 @@
 </view>
 
 <view class="buttons">
-<block wx:if="{{recordState}}">
-  <image class="buttonItem" src="../../asset/pic/mkf.png" mode="scaleToFill" bind:tap="acceptVoice" />
-</block>
-<block wx:else>
-  <image class="buttonItem" src="../../asset/pic/bf.png" mode="scaleToFill" bind:tap="acceptVoice" />
+  <block wx:if="{{!recordState}}">
+    <image class="buttonItem" src="../../asset/pic/mkf.png" mode="scaleToFill" bind:tap="acceptVoice" />
+  </block>
+  <block wx:else>
+    <image class="buttonItem" src="../../asset/pic/bf.png" mode="scaleToFill" bind:tap="acceptVoice" />
+  </block>
   <image class="buttonItem" src="../../asset/pic/xj.png" mode="scaleToFill" bind:tap="takePhoto" />
-</block>
-
 </view>
-
