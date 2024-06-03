@@ -32,6 +32,7 @@ function GeneralTranslate(q, from, to, Object) {
         outputText: tex,
       })
       history.setHistory(q, tex);
+      history.getHistoryInfo();
     }
   })
 }

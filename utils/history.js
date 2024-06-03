@@ -5,6 +5,7 @@ function setHistory(texInput, texOutput) {
     "input": texInput,
     "output": texOutput,
   };
+  SetTransHistory(texInput,texOutput,key)
   wx.setStorageSync(key, tex);
 }
 
@@ -44,6 +45,14 @@ function removeHistory(key) {
   });
 }
 
+function SetTransHistory(textInput,textOutput,key){
+  const app = getApp();
+  const HisArr=app.globalData.transHistory
+  const length=HisArr.length
+  HisArr.push({id:length,currentText:textInput,outputText:textOutput,key:key})
+  app.globalData.transHistory=HisArr
+}
+
 module.exports = {
   setHistory,
   getHistoryInfo,
@@ -51,3 +60,4 @@ module.exports = {
   clearHistory,
   removeHistory,
 }
+

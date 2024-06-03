@@ -153,11 +153,6 @@ Page({
     const language = require('../../utils/language.js');
     generalTranslate.GeneralTranslate(this.data.currentText, language.findLanguageCode(this.data.languageArr[this.data.currentLanguage]), language.findLanguageCode(this.data.languageArr[this.data.targetLanguage]), this);
 
-    const HisArr=app.globalData.transHistory
-    const length=HisArr.length
-    //HisArr.app
-
-
   },
 
   setCurrentLanguage(event) {
