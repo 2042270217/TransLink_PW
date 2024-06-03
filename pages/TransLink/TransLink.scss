@@ -43,7 +43,8 @@
   margin-right: 20rpx;
   margin-top: 10rpx;
   margin-bottom: 10rpx;
-
+  align-items: center;
+  justify-content: space-around;
 }
 
 .leftButton {
@@ -130,9 +131,15 @@
   flex: 3;
   gap: 20rpx;
 }
-
+.text{
+  flex: 2;
+  font-size: large;
+}
 .rightButton {
   display: flex;
+  flex-direction: column;
+  // align-items: flex-end;
+  // justify-content:space-around;
   flex: 1;
 }
 

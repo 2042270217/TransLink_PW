@@ -15,11 +15,41 @@ Page({
   data: {
     currentText: '',
     outputText: '',
-    languageArr: ['中文', '英文'],
+    languageArr: [
+      "自动检测",
+      "中文",
+      "英语",
+      "西班牙语",
+      "法语",
+      "阿拉伯语",
+      "俄语",
+      "韩语",
+      "德语",
+      "日语",
+      "葡萄牙语",
+      "意大利语",
+      "荷兰语",
+      "泰语",
+      "希腊语",
+      "波兰语",
+      "捷克语",
+      "匈牙利语",
+      "瑞典语",
+      "芬兰语",
+      "保加利亚语",
+      "丹麦语",
+      "罗马尼亚语",
+      "斯洛文尼亚语",
+      "爱沙尼亚语",
+      "越南语",
+      "繁体中文",
+      "粤语",
+      "文言文",
+    ],
     currentLanguage: 0,
     targetLanguage: 1,
     recordState: false,
-    imgURL:''
+    imgURL: ''
   },
 
 
@@ -39,8 +69,10 @@ Page({
     //识别结束事件
     manager.onStop = function (res) {
       console.log("结束录音", res.result)
-      const re=res.result
-      that.setData({currentText:re})
+      const re = res.result
+      that.setData({
+        currentText: re
+      })
     }
     manager.onRecognize = function (res) {
       console.log(res.result)
@@ -58,8 +90,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    var app=getApp()
-    this.setData({imgURL:app.globalData.reservePhotoURL})
+    var app = getApp()
+    console.log(app.globalData.reservePhotoURL)
+    this.setData({
+      imgURL: app.globalData.reservePhotoURL
+    })
+    const pictureTranslate = require('../../utils/pictureTranslate.js');
+    const language = require('../../utils/language.js');
+
+    pictureTranslate.PictureTranslate(language.findLanguageCode(this.data.languageArr[this.data.currentLanguage]), language.findLanguageCode(this.data.languageArr[this.data.targetLanguage]), this,this.data.imgURL)
   },
 
   /**
@@ -99,6 +138,8 @@ Page({
 
   playCurrentVoice() {
     console.log("playCurrentVoice~" + this.data.currentText)
+    const generateVoice = require('../../utils/generateVoice.js');
+    generateVoice.GenerateVoice(this.data.currentText);
   },
   confirmText(event) {
     this.setData({
@@ -106,10 +147,16 @@ Page({
     })
   },
   translate() {
-    console.log("translate~" + this.data.currentText)
-    this.setData({
-      outputText: this.data.currentText
-    })
+    const generalTranslate = require('../../utils/generalTranslate.js');
+    const history = require('../../utils/history.js');
+
+    const language = require('../../utils/language.js');
+    generalTranslate.GeneralTranslate(this.data.currentText, language.findLanguageCode(this.data.languageArr[this.data.currentLanguage]), language.findLanguageCode(this.data.languageArr[this.data.targetLanguage]), this);
+
+    const HisArr=app.globalData.transHistory
+    const length=HisArr.length
+    //HisArr.app
+
 
   },
 
@@ -136,6 +183,8 @@ Page({
 
   playOutputVoice() {
     console.log("playOutputVoice~" + this.data.outputText);
+    const generateVoice = require('../../utils/generateVoice.js');
+    generateVoice.GenerateVoice(this.data.outputText);
   },
 
   acceptVoice() {
@@ -151,25 +200,25 @@ Page({
       })
     }
   },
-  takePhoto(){
+  takePhoto() {
     console.log("take a photo")
     wx.chooseMedia({
-      count:1,
-      mediaType:['image'],
-      success(res){
-        const photo=res.tempFiles[0].tempFilePath
+      count: 1,
+      mediaType: ['image'],
+      success(res) {
+        const photo = res.tempFiles[0].tempFilePath
         wx.navigateTo({
           url: `/pages/ClipPicture/ClipPicture?photoPath=${photo}`
         })
       }
     })
   },
-  setClipboardCur(){
+  setClipboardCur() {
     wx.setClipboardData({
       data: this.data.currentText
     })
   },
-  setClipboardOut(){
+  setClipboardOut() {
     wx.setClipboardData({
       data: this.data.outputText
     })
