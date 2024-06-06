@@ -1,4 +1,5 @@
 //引入js
+//翻译图片
 function PictureTranslate(from, to, that, Photourl) {
   const generalTranslate = require('./generalTranslate.js');
   const language = require('./language.js');
