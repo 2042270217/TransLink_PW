@@ -9,7 +9,7 @@ function generateRandomString(length) {
   }
   
   return result;
-}
+}//生成随机salt
 
 module.exports = {
   generateRandomString

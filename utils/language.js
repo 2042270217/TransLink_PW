@@ -1,3 +1,4 @@
+//转换语言为代码
 const languages = {
   "auto": "自动检测",
   "zh": "中文",

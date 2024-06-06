@@ -1,3 +1,4 @@
+//通用文本翻译
 const md5 = require('./md5.js');
 const info = require('./info.js')
 const utils = require('./utils.js');

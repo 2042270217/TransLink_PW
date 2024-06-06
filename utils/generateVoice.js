@@ -1,3 +1,4 @@
+//语音合成（仅支持中英文）
 function GenerateVoice(text) {
   wx.request({
     url: 'https://aip.baidubce.com/oauth/2.0/token?client_id=MZNRF0KTHRh9jML40568xuKd&client_secret=RzxUlh8V7fBYTenVr9tZRdecYLLBryZt&grant_type=client_credentials',
