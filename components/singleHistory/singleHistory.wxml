@@ -2,6 +2,7 @@
   <view class="singleHistory_big">
     <view class="top" bind:tap="unfold">
     </view>
+
     <view class="mainBody">
       <view class="textBody">
         <text class="singleCurrentHistory">{{currentText}} </text>
@@ -18,9 +19,9 @@
 </block>
 <block wx:else>
   <view class="singleHistory_normal" bind:tap="unfold">
-    <view class="textBody">
-      <text class="singleCurrentHistory">{{currentText}} </text>
-      <text class="singleOutputHistory">{{outputText}} </text>
+    <view class="textBody_normal">
+      <text class="singleCurrentHistory_normal" max-lines="{{1}}" overflow="clip">{{currentText}} </text>
+      <text class="singleOutputHistory_normal" max-lines="{{1}}" overflow="clip">{{outputText}} </text>
     </view>
   </view>
 </block>

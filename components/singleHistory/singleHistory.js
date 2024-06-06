@@ -39,7 +39,9 @@ Component({
       })
     },
     playCurrentVoice(){
-      console.log("PlayVoice~~"+this.properties.outputText)
+      console.log("playOutputVoice~" + this.data.outputText);
+      const generateVoice = require('../../utils/generateVoice.js');
+      generateVoice.GenerateVoice(this.data.outputText);
     }
   }
 })

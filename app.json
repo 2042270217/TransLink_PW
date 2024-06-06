@@ -31,13 +31,6 @@
         "iconPath": "asset/pic/history.png",
         "selectedIconPath": "asset/pic/history_active.png"
       }
-      ,
-      {
-        "text": "设置",
-        "pagePath": "pages/Setting/Setting",
-        "iconPath": "asset/pic/setting.png",
-        "selectedIconPath": "asset/pic/setting_active.png"
-      }
     ]
   },
   "style": "v2",

@@ -1,15 +1,45 @@
 .singleHistory_normal {
   height: 100rpx;
-  display: flex;
-  flex-direction: column;
   background-color: #e4e4e4;
   margin-right: 20rpx;
   margin-left: 20rpx;
   margin-top: 5rpx;
   border-radius: 15rpx;
 }
+.singleCurrentHistory_normal {
+  height: 55rpx;
+  width: 650rpx;
+  margin-top: 5rpx;
+  overflow: hidden;
+  white-space: nowrap; // 处理元素内的空白：不换行
+  text-overflow: ellipsis; //文本溢出处理方式：显示省略号
+  font-size: larger;
+}
+
+.singleOutputHistory_normal {
+  height: 35rpx;
+  width: 650rpx;
+  margin-bottom: 5rpx;
+  color: rgb(139, 139, 139);
+  font-size: medium;
+  overflow: hidden;
+  white-space: nowrap; // 处理元素内的空白：不换行
+  text-overflow: ellipsis; //文本溢出处理方式：显示省略号
+}
+.textBody_normal{
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
 .singleHistory_big {
-  height: 300rpx;
+  max-height: 450rpx;
   display: flex;
   flex-direction: column;
   background-color: #e4e4e4;
@@ -20,27 +50,19 @@
 }
 
 .top{
-  flex:1;
   background-color: #e4e4e4;
   border-radius:15rpx;
+  height: 80rpx;
 }
 
 .mainBody{
   display: flex;
-  flex:3;
   margin-top: 10rpx;
   background-color: #f3f3f3;
   flex-direction: column;
+  max-height: 350rpx;
 }
 
-.singleCurrentHistory {
-  flex: 3;
-}
-
-.singleOutputHistory {
-  flex: 2;
-  color: rgb(139, 139, 139);
-}
 
 .textBody{
   display: flex;
@@ -50,6 +72,7 @@
   margin-bottom: 5rpx;
   margin-right: 20rpx;
   margin-left: 20rpx;
+  max-height: 300rpx;
 }
 
 .buttonBody{
@@ -59,6 +82,7 @@
   margin-bottom: 5rpx;
   display: flex;
   gap: 50rpx;
+  max-height: 50rpx;
 }
 .button{
   width: 40rpx;

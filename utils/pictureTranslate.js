@@ -34,7 +34,7 @@ function PictureTranslate(from, to, that, Photourl) {
               that.setData({
                 currentText: tex,
               })
-              generalTranslate.GeneralTranslate(tex, from, to, that);
+              // generalTranslate.GeneralTranslate(tex, from, to, that);
             }
           })
         }

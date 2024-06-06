@@ -1,6 +1,6 @@
 // pages/History/History.js
 const app = getApp();
-const history=require('../../utils/history.js')
+const history = require('../../utils/history.js')
 
 Page({
 
@@ -9,20 +9,19 @@ Page({
    */
   data: {
     multiSelectState: false,
-    transHistory: [
-    ],
+    transHistory: [],
     selectedHis: [],
-    allSelected:false
+    allSelected: false
   },
-  delSingle(index){
-    var his=this.data.transHistory
+  delSingle(index) {
+    var his = this.data.transHistory
     history.removeHistory(his[index].key)
-    his.splice(index,1)
-    for(var i=index;i<his.length;i++){
-      his[i].id-=1
+    his.splice(index, 1)
+    for (var i = index; i < his.length; i++) {
+      his[i].id -= 1
     }
     this.setData({
-      transHistory:his
+      transHistory: his
     })
     console.log(this.data.transHistory)
   },
@@ -34,7 +33,7 @@ Page({
     })
     if (res.confirm) {
       this.delSingle(event.detail)
-      app.globalData.transHistory=this.data.transHistory
+      app.globalData.transHistory = this.data.transHistory
       wx.showToast({
         title: '删除成功',
         icon: 'none',
@@ -49,7 +48,7 @@ Page({
     console.log(this.data.selectedHis)
   },
   async delSelect() {
-    const selects=this.data.selectedHis
+    const selects = this.data.selectedHis
     selects.sort()
     console.log("删除记录" + selects)
 
@@ -58,10 +57,10 @@ Page({
       content: '是否删除历史记录',
     })
     if (res.confirm) {
-      for(var i=0;i<selects.length;i++){
-        this.delSingle(selects[i]-i)
+      for (var i = 0; i < selects.length; i++) {
+        this.delSingle(selects[i] - i)
       }
-      app.globalData.transHistory=this.data.transHistory
+      app.globalData.transHistory = this.data.transHistory
       wx.showToast({
         title: '删除成功',
         icon: 'none',
@@ -81,15 +80,37 @@ Page({
     const res = wx.getStorageInfoSync();
     for (let i = 0; i < res.keys.length; i++) {
       let value = wx.getStorageSync(res.keys[i]);
-      console.log(value);
       const Arr = app.globalData.transHistory;
-      Arr.push({id:i,currentText:value.input,outputText:value.output,key:res.keys[i]});
+      Arr.push({
+        id: i,
+        currentText: value.input,
+        outputText: value.output,
+        key: res.keys[i]
+      });
     }
   },
-  onShow(){
-    this.setData({transHistory:app.globalData.transHistory})
+  onShow() {
+    this.setData({
+      transHistory: app.globalData.transHistory
+    })
   },
-  selectAll(){
-    
+  selectAll() {
+    let arr = this.data.transHistory
+    let selectArr=[]
+    let allSelected=this.data.allSelected
+    if(allSelected){
+      for (let i = 0; i < arr.length; i++) {
+        arr[i].checked = false
+      }
+      allSelected=false
+    }
+    else{
+      for (let i = 0; i < arr.length; i++) {
+        arr[i].checked = true
+        selectArr.push(i)
+      }
+      allSelected=true
+    }
+    this.setData({transHistory:arr,selectedHis:selectArr,allSelected:allSelected})
   }
 })
