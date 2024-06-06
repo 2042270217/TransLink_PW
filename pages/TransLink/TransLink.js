@@ -1,11 +1,9 @@
 // pages/TransLink/TransLink.js
-
 const app = getApp();
 //引入插件：微信同声传译
 const plugin = requirePlugin('WechatSI');
 //获取全局唯一的语音识别管理器recordRecoManager
 const manager = plugin.getRecordRecognitionManager();
-
 
 Page({
 
@@ -79,12 +77,6 @@ Page({
     }
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
 
   /**
    * 生命周期函数--监听页面显示
@@ -99,41 +91,6 @@ Page({
     const language = require('../../utils/language.js');
 
     pictureTranslate.PictureTranslate(language.findLanguageCode(this.data.languageArr[this.data.currentLanguage]), language.findLanguageCode(this.data.languageArr[this.data.targetLanguage]), this,this.data.imgURL)
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
   },
 
   playCurrentVoice() {
